@@ -1,0 +1,23 @@
+@media (max-width: 1200px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 767px) {
+    .promo {
+        padding-bottom: 50px;
+        &__header {
+            font-size: 36px;
+        }
+        &__subheader {
+            font-size: 18px;
+        }
+    }
+
+    .advantages {
+        &__block {
+            max-width: 201px;
+        }
+    }
+}

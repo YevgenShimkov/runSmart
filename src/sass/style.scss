@@ -1,5 +1,6 @@
 @import 'base/_mixins.scss';
 @import 'base/_variables.scss';
+
 * {
     font-family: 'Museo Sans Cyrl', sans-serif;
 }
@@ -16,3 +17,4 @@
 @import 'blocks/title';
 @import 'blocks/consultation';
 @import 'blocks/forms';
+@import 'base/media';
