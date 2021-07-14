@@ -14,10 +14,134 @@
             font-size: 18px;
         }
     }
+    .header {
+        &__contacts {
+            font-size: 17px;
+        }
+    }
 
     .advantages {
         &__block {
             max-width: 201px;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .header {
+        &__logo {
+            width: 30%;
+        }
+        &__official {
+            font-size: 10px;
+            span {
+                font-size: 15px;
+            }
+        }
+        &__contacts {
+            a {
+                display: none;
+            }
+        }
+    }
+    .promo {
+        &__wrapper {
+            align-items: center;
+        }
+    }
+
+    .button {
+        &_main {
+            margin-top: 80px;
+        }
+    }
+
+    .advantages {
+        padding: 60px 0 50px 0;
+        &__wrapper {
+            flex-direction: column;
+            align-items: center;
+        }
+        &__block {
+            max-width: 238px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .consultation {
+        padding: 60px 0 50px 0;
+        min-height: 575px;
+        &__descr {
+            font-size: 18px;
+            text-align: center;
+        }
+    }
+    .title {
+        &_left {
+            font-size: 23px;
+            text-align: center;
+        }
+    }
+
+    .feed-form {
+        margin: 0 auto;
+        margin-top: 36px;
+    }
+}
+
+@media (max-width: 376px) {
+    .header {
+        &__official {
+            display: none;
+        }
+        &__logo {
+            width: 45%;
+        }
+    }
+    .promo {
+        min-height: 450px;
+        &__wrapper {
+            margin-top: 50px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 28px;
+        }
+        &__subheader {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        &__icons {
+            width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    .title {
+        &_left {
+            font-size: 20px;
+        }
+    }
+
+    .advantages {
+        padding: 40px 0 40px 0;
+        &__wrapper {
+            margin-top: 45px;
+        }
+        &__subtitle {
+            margin-top: 10px;
+        }
+        &__descr {
+            margin-top: 10px;
+        }
+    }
+
+    .consultation {
+        padding: 40px 0 30px 0;
+        min-height: 450px;
+        &__descr {
+            font-size: 15px;
+            line-height: 20px;
         }
     }
 }
