@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body>
-    <section class="promo">
+    <section id='up' class="promo">
         <div class="container">
             <header class="header">
                 <div href="#" class="header__logo">
@@ -58,7 +59,7 @@
             <h2 class="title">НАШИ ПРЕИМУЩЕСТВА</h2>
             <div class="advantages__wrapper">
                 <div class="advantages__block">
-                    <img src="icons/cup.svg" alt="cup">
+                    <img src="icons/cup.svg" alt="cup" class="advantages__icon">
                     <h3 class="advantages__subtitle">Делимся опытом</h3>
                     <div class="advantages__descr">Наши сотрудники всегда готовы поделиться своим опытом , так как
                         сами
@@ -66,7 +67,7 @@
                     </div>
                 </div>
                 <div class="advantages__block">
-                    <img src="icons/heart.svg" alt="heart">
+                    <img src="icons/heart.svg" alt="heart" class="advantages__icon advantages__icon_animated">
                     <h3 class="advantages__subtitle">Заботимся о здоровье</h3>
                     <div class="advantages__descr">Мы работаем для того, чтобы Ваши занятия спортом шли на пользу
                         Вашему
@@ -74,7 +75,7 @@
                     </div>
                 </div>
                 <div class="advantages__block">
-                    <img src="icons/shoe.svg" alt="shoe">
+                    <img src="icons/shoe.svg" alt="shoe" class="advantages__icon">
                     <h3 class="advantages__subtitle">Учим бегать</h3>
                     <div class="advantages__descr">Помогаем с обучением правильной технике бега! Дружим с
                         крупнейшей
@@ -92,8 +93,9 @@
                 Просто заполните форму заявки <br> и мы перезвоним вам в течении 10 минут
             </div>
             <form id="consultation-form" class="feed-form" action="#">
-                <input name="name" required placeholder="Ваше имя" type="text">  <!-- required обязательное поле -->
-                <input name="phone" required placeholder="Ваш телефон"> <!--  minlength='10'/ maxlength='10' мин и макс количество символов которое должна содержать форма -->
+                <input name="name" required placeholder="Ваше имя" type="text"> <!-- required обязательное поле -->
+                <input name="phone" required placeholder="Ваш телефон">
+                <!--  minlength='10'/ maxlength='10' мин и макс количество символов которое должна содержать форма -->
                 <input name="email" required placeholder="Ваш E-mail" type="email">
 
                 <!-- <input name="" type="submit" value="Заказать консультацию"> -->
@@ -403,7 +405,7 @@
     <section class="feed">
         <div class="container">
             <h2 class="title">отзывы клиентов</h2>
-            <div class="feed__item">
+            <div class="feed__item animate__fadeInUp animate__animated wow" data-wow-duration="2s" data-wow-delay="1s">
                 <img src="img/photo_1.png" alt="Ирина Иванченко" class="feed__img">
                 <div class="feed__text">
                     <div class="feed__subtitle">Ирина Иванченко</div>
@@ -418,7 +420,7 @@
                     </div>
                 </div>
             </div>
-            <div class="feed__item">
+            <div class="feed__item animate__fadeInUp animate__animated wow" data-wow-duration="2s" data-wow-delay="1s">
                 <img src="img/photo_2.png" alt="Иван Сёмочкин" class="feed__img">
                 <div class="feed__text">
                     <div class="feed__subtitle">Иван Сёмочкин</div>
@@ -433,7 +435,7 @@
                     </div>
                 </div>
             </div>
-            <div class="feed__item">
+            <div class="feed__item animate__fadeInUp animate__animated wow" data-wow-duration="2s" data-wow-delay="1s">
                 <img src="img/photo_3.png" alt="Юлия Дашкина" class="feed__img">
                 <div class="feed__text">
                     <div class="feed__subtitle">Юлия Дашкина</div>
@@ -474,7 +476,7 @@
             <div class="modal__subtitle">Просто заполните форму заявки</div>
             <div class="modal__descr">и мы перезвоним вам в течении 10 минут</div>
             <form class="feed-form feed-form_mt25" action="#">
-                <input name="name"  placeholder="Ваше имя" type="text">
+                <input name="name" placeholder="Ваше имя" type="text">
                 <input name="phone" placeholder="Ваш телефон">
                 <input name="email" placeholder="Ваш E-mail" type="email">
 
@@ -502,11 +504,14 @@
         </div>
     </div>
 
+    <a href="#up"><img src="icons/up.svg" alt="up" class="pageup"></a>
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/jquery.maskedinput.min.js"></script>
+    <script src="js/wow.min.js"></script>
     <script src="js/script.js"></script>
 
 </body>

@@ -34,23 +34,23 @@ $(document).ready(function () {
 
   toggleSlide('.catalog-item__list');
   toggleSlide('.catalog-item__content');
-  
+
   // Modal
   // when you click on order a consultation or order a call, the mod window pops up 
-  $('[data-modal=consultation]').on('click', function() {
+  $('[data-modal=consultation]').on('click', function () {
     $('.overlay, #consultation').fadeIn('slow');
   });
   // X when you click on which closes the mod window 
-  $('.modal__close').on('click', function() {
+  $('.modal__close').on('click', function () {
     $('.overlay, #consultation, #order, #thanks').fadeOut('slow'); // list of windows to be closed 
   });
   // when click button "buy"
   // change subtitle on modal win buy
-  $('.button_mini').each( function(i) { // перебираем все нопки
-      $(this).on('click', function() { // нажатая кнопка, бе
-        $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text()); // внутри модального окна order, есть класс modal__descr. В него встравляем текст (находим subtitle элемента по счёту i и берем оттуда текст)
-        $('.overlay, #order').fadeIn('slow'); // выводим модальное окно
-      });
+  $('.button_mini').each(function (i) { // перебираем все нопки
+    $(this).on('click', function () { // нажатая кнопка, бе
+      $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text()); // внутри модального окна order, есть класс modal__descr. В него встравляем текст (находим subtitle элемента по счёту i и берем оттуда текст)
+      $('.overlay, #order').fadeIn('slow'); // выводим модальное окно
+    });
   });
 
   // validation
@@ -60,8 +60,8 @@ $(document).ready(function () {
         name: 'required',
         phone: 'required',
         email: {
-            required: true,
-            email: true
+          required: true,
+          email: true
         }
       },
       messages: { //  change messages ivstead of default
@@ -69,7 +69,7 @@ $(document).ready(function () {
         phone: "Введите номер телефона",
         email: {
           required: "Введите свою почту",
-          email:'Не правильный формат почты'
+          email: 'Не правильный формат почты'
         }
       }
     });
@@ -81,4 +81,49 @@ $(document).ready(function () {
 
   // mask 
   $('input[name=phone]').mask('+38(999) 999-9999');
+
+  //mail
+  // $('form') обращаемся ко всем формам
+  // .submit когда все условия инпутов выполнены
+  // preventDefault отменяем стандартное поведение браузера
+  // $.ajax  отправляем данные на сервер, метод jquery
+  // type: 'POST'  отправка
+  // url:"mailer/smart.php" кто будет обрабатывать письмо
+  // данные которые отправляются на сервер
+  // .serialize форматируем данные для сервера
+  $('form').submit(function (e) {
+    e.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "mailer/smart.php",
+      data: $(this).serialize()
+    }).done(function () {
+      $(this).find("input").val('');
+      $('#consultation, #order').fadeOut(); // прячем окна после отправки
+      $('.overlay, #thanks').fadeIn(); // показываем (модальное окно "thanks" после отправки формы
+
+      $('form').trigger('reset');
+    });
+    return false;
+  });
+
+  // pageup
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 1600) {
+      $('.pageup').fadeIn();
+    } else {
+      $('.pageup').fadeOut();
+    }
+  });
+
+  // slow pageup
+
+  $("a[href^='#']").click(function () {
+    const _href = $(this).attr("href");
+    $("html, body").animate({ scrollTop: $(_href).offset().top + "px" });
+    return false;
+  });
+
+  // animation wow
+  new WOW().init();
 });

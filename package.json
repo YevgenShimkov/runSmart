@@ -23,7 +23,9 @@
     "maintained node versions",
     "not dead"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "animate.css": "^4.1.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/YevgenShimkov/runSmart-.git"
